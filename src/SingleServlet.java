@@ -72,6 +72,20 @@ public class SingleServlet extends HttpServlet {
 						"<input type=\"submit\" value=\"Add to cart\" id=\"submit\">"+
 					"</form>"+
 				"</div>"+
+				"<div class=\"btn_form\">"+
+					"<form action=\"ReviewServlet\" method=\"post\">"+
+						"<input type=\"hidden\" name=\"productID\" value="+productID+">"+
+						"Add your review: <input type=\"text\" name=\"review\">"+
+						"<input type=\"submit\" value=\"Submit\" id=\"submit\">"+
+					"</form>"+
+				"</div>"+
+				"<div class=\"btn_form\">"+
+					"<form action=\"RatingServlet\" method=\"post\">"+
+						"<input type=\"hidden\" name=\"productID\" value="+productID+">"+
+						"Add your rating (1-5): <input type=\"text\" name=\"rating\">"+
+						"<input type=\"submit\" value=\"Submit\" id=\"submit\">"+
+					"</form>"+
+				"</div>"+
 			"</div>"+
 		   "<div class=\"clearfix\"> </div>"+
 		"</div>"+

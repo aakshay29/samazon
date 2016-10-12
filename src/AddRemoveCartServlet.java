@@ -3,6 +3,7 @@
 import java.io.IOException;
 import java.util.List;
 
+import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import customTools.DBSamazonCart;
 import customTools.DBSamazonOrder;
+import customTools.SendMail;
 import model.Samazonaddress;
 import model.Samazoncart;
 import model.Samazonorder;
@@ -53,6 +55,8 @@ public class AddRemoveCartServlet extends HttpServlet {
 		List<Samazoncart> cartListToOrder = null;
 		cartListToOrder = (List<Samazoncart>) session.getAttribute("cartList");
 		Samazonuser user = (Samazonuser) session.getAttribute("user");
+		System.out.println("asdfuhasdfi: " + user.getEmail());
+
 		
 		if(action.equalsIgnoreCase("delete")){
 			int cartID2 = Integer.parseInt(request.getParameter("cartID"));
@@ -65,9 +69,22 @@ public class AddRemoveCartServlet extends HttpServlet {
 			url = "/Cart.jsp";
 		}
 		if(action.equalsIgnoreCase("order")){
-			DBSamazonCart.order(cartListToOrder,address);
-			url = "/Order.jsp";
-		}
+			//if(user == null){
+				//url = "/Login.jsp";
+		//	}
+			//else{
+				DBSamazonCart.order(cartListToOrder,address);
+				try {
+					//SendMail.sendMail(user.getEmail(),"aakshay.294@gmail.com","Your order has been placed", orderHTML, true);
+					SendMail.sendMail("aakshay.294@gmail.com","aakshay.294@gmail.com","Your order has been placed", "orderHTML", false);
+				} catch (MessagingException e) {
+					 //TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				url = "/Order.jsp";
+			//}		
+		}	
+		
 		
 		String orderHTML = "";
 		List<Samazonorder> orderList = null;
@@ -105,6 +122,8 @@ public class AddRemoveCartServlet extends HttpServlet {
 					"</div>";
 		}
 		request.getSession().setAttribute("orderHTML", orderHTML);
+		
+		
 		
 		String cartHTML = "";
 		System.out.println(userID);

@@ -19,7 +19,7 @@
 			<div class="login-top wow fadeInUp animated" data-wow-delay=".7s">
 				<h4>
 					Welcome to Samazon! <br> Not a Member? <a
-						href="register.html"> Register Now »</a>
+						href="Register.jsp"> Register Now »</a>
 				</h4>
 			</div>
 			<div class="login-body wow fadeInUp animated" data-wow-delay=".7s">

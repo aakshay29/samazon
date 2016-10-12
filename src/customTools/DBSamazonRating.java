@@ -3,6 +3,7 @@ package customTools;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import UserData.DBUtil;
@@ -30,5 +31,19 @@ public class DBSamazonRating {
 			em.close();
 		}
 		return averageRating;
+	}
+	public static void addRating(Samazonrating rating) {
+		EntityManager em = DBUtil.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		try {
+			trans.begin();
+			em.persist(rating);
+			trans.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			trans.rollback();
+		} finally {
+			em.close();
+		}
 	}
 }

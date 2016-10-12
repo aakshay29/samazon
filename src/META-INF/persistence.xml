@@ -11,6 +11,7 @@
 		<class>model.Samazonreview</class>
 		<class>model.Samazonsale</class>
 		<class>model.Samazonuser</class>
+		<class>model.Samazonwish</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
 			<property name="javax.persistence.jdbc.user" value="ora1"/>

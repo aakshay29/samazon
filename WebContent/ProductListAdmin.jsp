@@ -36,6 +36,7 @@
 								<td>
 									<form action="EditServlet" method="post">
 										<input type="hidden" name="productID" value=<c:out value="${productList.productid}" />>
+										<input type="hidden" name="action" value="edit">
 										<input type="submit" value="Edit" id="submit">
 									</form>												
 								</td>
@@ -43,6 +44,7 @@
 						</c:forEach>
 					</tbody>
 				</table>
+				<a href="AdminAdd.jsp">Add Product</a> 
 			</div>
 			<jsp:include page="Footer.jsp"></jsp:include>
 </body>

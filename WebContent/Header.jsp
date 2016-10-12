@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -63,7 +63,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//end-smooth-scrolling-->
 </head>
 <body>
-<!--header-->
+	<!--header-->
 	<div class="header">
 		<div class="header-two navbar navbar-default">
 			<!--header-two-->
@@ -78,21 +78,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="nav navbar-nav navbar-right header-two-right">
 					<div class="header-right cart">
+						${helloUser}
 						<a href="#"><span class="glyphicon glyphicon-shopping-cart"
 							aria-hidden="true"></span></a>
-						<h4>
-							${cartWidgetHTML}
-						</h4>
-						<div class="cart-box">						
-								<form action="CartServlet" method="post">
-									<input type="submit" value="View Cart" id="submit"> 
-								</form>				
+						<h4>${cartWidgetHTML}</h4>
+						<div class="cart-box">
+							<form action="CartServlet" method="post">
+								<input type="submit" value="View Cart" id="submit">
+							</form>
 							<div class="clearfix"></div>
 						</div>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<div class="top-nav navbar navbar-default">
+		<!--header-three-->
+		<div class="container">
+			<nav class="navbar" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
+			<!--navbar-header-->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav top-nav-info">
+					<li><a href="Products.jsp">Home</a></li>
+					<li><a href="Cart.jsp">Cart</a></li>
+					<li><a href="Order.jsp">Orders</a></li>				
+				</ul>
+				<div class="clearfix"></div>
+				<!--//navbar-collapse-->
+				<header class="cd-main-header">
+				<ul class="cd-header-buttons">
+					<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+				</ul>
+				<!-- cd-header-buttons --> </header>
+			</div>
+			<!--//navbar-header--> </nav>
+			<div id="cd-search" class="cd-search">
+				<form>
+					<input type="search" placeholder="Search...">
+				</form>
 			</div>
 		</div>
 	</div>

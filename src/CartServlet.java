@@ -46,7 +46,6 @@ public class CartServlet extends HttpServlet {
 		System.out.println(userID);
 		List<Samazoncart> cartList = null;
 		cartList = DBSamazonCart.getCartList(userID);
-		System.out.println(cartList);
 		session.setAttribute("cartList", cartList);		
 		String imageSource;
 		String productName;
